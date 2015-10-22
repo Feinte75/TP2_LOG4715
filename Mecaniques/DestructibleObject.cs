@@ -13,7 +13,7 @@ public class DestructibleObject : MonoBehaviour {
 
 		//}
 
-		// Rajouter le cas pour les voitures pour qu il ralentisse a chaque degates
+		// Rajouter le cas pour les voitures pour qu il ralentisse a chaque degats
 
 	}
 
