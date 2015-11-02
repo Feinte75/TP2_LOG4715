@@ -81,6 +81,11 @@ public class CarController : MonoBehaviour
         get { return maxSpeed; }
     }
 
+	public void ChangeMaxSpeed(float newMaxSpeed)
+	{
+		maxSpeed = newMaxSpeed;
+	}
+
 
     public float MaxTorque
     {

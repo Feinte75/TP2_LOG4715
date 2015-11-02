@@ -33,7 +33,7 @@ public class CarStatus : MonoBehaviour {
 
 	public void changeCarHealth () { // Fummee + Vitesse
 		if(currentHP < 0){
-			car.changeMaxSpeed(0);
+			car.ChangeMaxSpeed(0);
 
 			GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
 			ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
@@ -46,19 +46,19 @@ public class CarStatus : MonoBehaviour {
 			Destroy(this.gameObject,3);
 		}
 		else if(currentHP >= 0 && currentHP<20){
-			car.changeMaxSpeed(40);
+			car.ChangeMaxSpeed(40);
 		}
 		else if(currentHP >= 20 && currentHP<40){
-			car.changeMaxSpeed(50);
+			car.ChangeMaxSpeed(50);
 		}
 		else if(currentHP >= 40 && currentHP<60){
-			car.changeMaxSpeed(55);
+			car.ChangeMaxSpeed(55);
 		}
 		else if(currentHP >= 60 && currentHP<80){
-			car.changeMaxSpeed(60);
+			car.ChangeMaxSpeed(60);
 		}
 		else if(currentHP >= 80){
-			car.changeMaxSpeed(60);
+			car.ChangeMaxSpeed(60);
 		}
 
 	}
