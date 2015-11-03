@@ -15,13 +15,4 @@ public class AutoReplacement : MonoBehaviour {
 
 	}
 
-
-	void OnTriggerExit(Collider collider) {
-		Transform player = collider.transform.parent.parent;
-		
-		Debug.Log (player);
-		
-		
-		
-	}
 }
