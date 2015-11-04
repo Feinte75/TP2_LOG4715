@@ -24,6 +24,9 @@ public class CarUserControlMP : MonoBehaviour
 		#if CROSS_PLATFORM_INPUT
 		float h = CrossPlatformInput.GetAxis(horizontal);
 		float v = CrossPlatformInput.GetAxis(vertical);
+		if (Input.GetKeyDown("v")) {
+			car.GetComponent<CarStatus>().LaunchPowerUp();
+		}
 		#else
 		float h = Input.GetAxis(horizontal);
 		float v = Input.GetAxis(vertical);

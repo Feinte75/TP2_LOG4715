@@ -4,17 +4,13 @@ using System.Collections;
 public class CarStatus : MonoBehaviour {
 
 	public bool hasbouncingprojectile = false;
-
 	public int currentHP = 100;
-
 	public int maxHP = 100;
-
 	public CarController car ;
+	private PowerUp myPowerUp;
 
 	void Start () {
-
 		car = GetComponent<CarController> ();
-
 	}
 
 	public void recupererDegat(int HP)
@@ -63,6 +59,21 @@ public class CarStatus : MonoBehaviour {
 
 	}
 
+	public void LaunchPowerUp() {
+		if (myPowerUp != null) {
+			myPowerUp.Execute (this);
+			myPowerUp = null;
+		}
+	}
+
+	public PowerUp MyPowerUp {
+		get {
+			return this.myPowerUp;
+		}
+		set {
+			myPowerUp = value;
+		}
+	}
 
 	public void changeHP(int HP)
 	{
