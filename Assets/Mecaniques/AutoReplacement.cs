@@ -5,12 +5,26 @@ public class AutoReplacement : MonoBehaviour {
 
 	public string tag = "Player";
 
+	public Transform replacementPoint;
 
-	void OnTriggerEnter(Collider collider) {
+
+	void OnTriggerEnter(Collider collider) { // Rajouter aussi pour projectile
 		Transform player = collider.transform.parent.parent;
 
-		Debug.Log (player);
+		Debug.Log (collider);
 
+		if (player.tag == tag) {
+			player.position = replacementPoint.position;
+			player.rotation = replacementPoint.rotation;
+			player.rigidbody.velocity = Vector3.zero;
+			player.rigidbody.angularVelocity = Vector3.zero;
+		
+		} 
+		else {
+
+
+
+		}
 
 
 	}
