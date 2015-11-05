@@ -875,7 +875,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 31976586}
   m_Layer: 0
-  m_Name: DestructibleObject
+  m_Name: DestructibleObject 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11048,6 +11048,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 600639892}
   - 132: {fileID: 600639893}
+  - 114: {fileID: 600639894}
   m_Layer: 0
   m_Name: NitroText
   m_TagString: Untagged
@@ -11091,6 +11092,18 @@ GUIText:
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
+--- !u!114 &600639894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600639891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05e4f7bafb8aa94fb08f442cfd84a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nitroText: {fileID: 600639893}
 --- !u!1001 &611516799
 Prefab:
   m_ObjectHideFlags: 0
@@ -13041,7 +13054,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 710302901}
   m_Layer: 8
-  m_Name: ProjectileSpawn
+  m_Name: projectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31231,10 +31244,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11444934, guid: 7d7f8b8a191968545b5e9e6bf735bea0, type: 2}
-      propertyPath: items.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 466200, guid: 7d7f8b8a191968545b5e9e6bf735bea0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.32999992
@@ -31267,15 +31276,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 2366200, guid: 7d7f8b8a191968545b5e9e6bf735bea0, type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: eae9c11350249284e8400a100179e0b2, type: 2}
-    - target: {fileID: 11444934, guid: 7d7f8b8a191968545b5e9e6bf735bea0, type: 2}
-      propertyPath: items.Array.data[0]
-      value: 
-      objectReference: {fileID: 11428236, guid: db6afb7c5feebff4488c172c55b323d8,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d7f8b8a191968545b5e9e6bf735bea0, type: 2}
   m_RootGameObject: {fileID: 1730382431}
@@ -34179,6 +34179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
+  - {fileID: 11482636, guid: 0221e2a824bcb2f4186fff97e5350b12, type: 2}
   - {fileID: 11428236, guid: db6afb7c5feebff4488c172c55b323d8, type: 2}
 --- !u!23 &1730382433
 Renderer:
@@ -34193,7 +34194,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: eae9c11350249284e8400a100179e0b2, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -39810,7 +39811,7 @@ GameObject:
   - 114: {fileID: 1982968805}
   - 65: {fileID: 1982968804}
   m_Layer: 0
-  m_Name: BlocPassage
+  m_Name: Bloc Passage
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

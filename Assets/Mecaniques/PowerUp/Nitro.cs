@@ -8,12 +8,12 @@ public class Nitro : PowerUp {
 
 	public override void Init ()
 	{
-		nitroValue = 5;	
+		nitroValue = 20;	
 	}
 
 	public override void Execute (CarStatus car)
 	{
 		Debug.Log ("Nitro ! ");
-		car.GetComponent<CarController> ().ChangeMaxSpeed (100);
+		car.Nitro += nitroValue;
 	}
 }

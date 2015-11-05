@@ -8,6 +8,7 @@ public class CarStatus : MonoBehaviour {
 	public int maxHP = 100;
 	public CarController car ;
 	private PowerUp myPowerUp;
+	private int nitro = 0;
 
 	void Start () {
 		car = GetComponent<CarController> ();
@@ -72,6 +73,15 @@ public class CarStatus : MonoBehaviour {
 		}
 		set {
 			myPowerUp = value;
+		}
+	}
+
+	public int Nitro {
+		get {
+			return this.nitro;
+		}
+		set {
+			nitro = value;
 		}
 	}
 
