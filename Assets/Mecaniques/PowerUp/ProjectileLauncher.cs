@@ -16,7 +16,7 @@ public class ProjectileLauncher : PowerUp {
 
 	public override void Execute (CarStatus car)
 	{
-		GameObject.Instantiate(prefab, GameObject.Find("projectileSpawn").transform.position,  GameObject.Find("projectileSpawn").transform.rotation);
+		GameObject.Instantiate(prefab, GameObject.Find("ProjectileSpawn").transform.position,  GameObject.Find("ProjectileSpawn").transform.rotation);
 	}
 
 }

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpeedText : MonoBehaviour {
 	
-	public GUIText speedText;
+	public Text speedText;
 	
 	// Update is called once per frame
 	void Update ()

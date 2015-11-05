@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class HPText : MonoBehaviour {
 	
-	public GUIText hpText;
+	public Text hpText;
 	
 	// Update is called once per frame
 	void Update ()

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class LapText : MonoBehaviour {
 
-	public GUIText lapText;
+	public Text lapText;
 
 	public int lap;
 	

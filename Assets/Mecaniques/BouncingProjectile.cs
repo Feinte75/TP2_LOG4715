@@ -8,7 +8,7 @@ public class BouncingProjectile : Projectile {
 
 	void Start () {
 		Rigidbody rigidbody =  this.GetComponent<Rigidbody>();
-		rigidbody.velocity = GameObject.Find("projectileSpawn").transform.up * 80;
+		rigidbody.velocity = GameObject.Find("ProjectileSpawn").transform.up * 80;
 
 	}
 

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class NitroText : MonoBehaviour {
 
-	public GUIText nitroText;
+	public Text nitroText;
 	
 	// Update is called once per frame
 	void Update ()
