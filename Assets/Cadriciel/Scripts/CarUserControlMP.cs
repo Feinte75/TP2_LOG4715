@@ -10,7 +10,9 @@ public class CarUserControlMP : MonoBehaviour
 
 	[SerializeField]
 	private string horizontal = "Horizontal";
-	
+
+	private bool nitro = false;
+
 	void Awake ()
 	{
 		// get the car controller
@@ -24,9 +26,14 @@ public class CarUserControlMP : MonoBehaviour
 		#if CROSS_PLATFORM_INPUT
 		float h = CrossPlatformInput.GetAxis(horizontal);
 		float v = CrossPlatformInput.GetAxis(vertical);
-		if (Input.GetKeyDown("v")) {
+		if (Input.GetKeyDown("space")) {
 			car.GetComponent<CarStatus>().LaunchPowerUp();
 		}
+
+		nitro = Input.GetKey(KeyCode.LeftShift);		
+
+		car.GetComponent<CarStatus>().ConsumeNitro(nitro);
+
 		#else
 		float h = Input.GetAxis(horizontal);
 		float v = Input.GetAxis(vertical);

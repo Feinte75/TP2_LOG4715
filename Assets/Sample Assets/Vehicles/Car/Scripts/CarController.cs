@@ -28,6 +28,17 @@ public class CarController : MonoBehaviour
     [SerializeField] private Advanced advanced;                                     // container for the advanced setting which will expose as a foldout in the inspector
 	[SerializeField] bool preserveDirectionWhileInAir = false;                      // flag for if the direction of travel to be preserved in the air (helps cars land in the right direction if doing huge jumps!)
 
+	private bool nitro = false;
+
+	public bool Nitro {
+		get {
+			return this.nitro;
+		}
+		set {
+			nitro = value;
+		}
+	}
+
     [System.Serializable]
     public class Advanced                                                           // the advanced settings for the car controller
     {
@@ -187,7 +198,7 @@ public class CarController : MonoBehaviour
 		if (accelBrakeInput > 0) {
 			if (CurrentSpeed > -smallSpeed) {
 				// pressing forward while moving forward : accelerate!
-				targetAccelInput = accelBrakeInput;
+				targetAccelInput = nitro ? accelBrakeInput * 2 : accelBrakeInput;
 				BrakeInput = 0;
 			}
 			else {

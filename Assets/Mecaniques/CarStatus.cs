@@ -6,12 +6,31 @@ public class CarStatus : MonoBehaviour {
 	public bool hasbouncingprojectile = false;
 	public int currentHP = 100;
 	public int maxHP = 100;
-	public CarController car ;
+	public CarController carController ;
 	private PowerUp myPowerUp;
-	private int nitro = 0;
+	private float nitro = 50;
+
+	
+	public PowerUp MyPowerUp {
+		get {
+			return this.myPowerUp;
+		}
+		set {
+			myPowerUp = value;
+		}
+	}
+	
+	public float Nitro {
+		get {
+			return this.nitro;
+		}
+		set {
+			nitro = value;
+		}
+	}
 
 	void Start () {
-		car = GetComponent<CarController> ();
+		carController = GetComponent<CarController> ();
 	}
 
 	public void recupererDegat(int HP)
@@ -30,7 +49,7 @@ public class CarStatus : MonoBehaviour {
 
 	public void changeCarHealth () { // Fummee + Vitesse
 		if(currentHP < 0){
-			car.ChangeMaxSpeed(0);
+			carController.ChangeMaxSpeed(0);
 
 			GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
 			ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
@@ -43,19 +62,19 @@ public class CarStatus : MonoBehaviour {
 			Destroy(this.gameObject,3);
 		}
 		else if(currentHP >= 0 && currentHP<20){
-			car.ChangeMaxSpeed(40);
+			carController.ChangeMaxSpeed(40);
 		}
 		else if(currentHP >= 20 && currentHP<40){
-			car.ChangeMaxSpeed(50);
+			carController.ChangeMaxSpeed(50);
 		}
 		else if(currentHP >= 40 && currentHP<60){
-			car.ChangeMaxSpeed(55);
+			carController.ChangeMaxSpeed(55);
 		}
 		else if(currentHP >= 60 && currentHP<80){
-			car.ChangeMaxSpeed(60);
+			carController.ChangeMaxSpeed(60);
 		}
 		else if(currentHP >= 80){
-			car.ChangeMaxSpeed(60);
+			carController.ChangeMaxSpeed(60);
 		}
 
 	}
@@ -67,21 +86,13 @@ public class CarStatus : MonoBehaviour {
 		}
 	}
 
-	public PowerUp MyPowerUp {
-		get {
-			return this.myPowerUp;
-		}
-		set {
-			myPowerUp = value;
-		}
-	}
+	public void ConsumeNitro(bool nitroPressed) {
 
-	public int Nitro {
-		get {
-			return this.nitro;
-		}
-		set {
-			nitro = value;
+		if (nitroPressed && nitro > 0) {
+			nitro -= 0.1f;
+			carController.Nitro = true;
+		} else {
+			carController.Nitro = false;
 		}
 	}
 

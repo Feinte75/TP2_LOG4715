@@ -15,7 +15,7 @@ public class NitroText : MonoBehaviour {
 			CarStatus carStatus = player.GetComponent<CarStatus>();
 			if (carStatus)
 			{
-				nitroText.text ="Nitro : " + (carStatus.Nitro).ToString ();
+				nitroText.text ="Nitro : " + ((int)carStatus.Nitro).ToString ();
 				
 			}
 		}
