@@ -10,8 +10,7 @@ public class AutoReplacement : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider) { // Rajouter aussi pour projectile
 		Transform player = collider.transform.parent.parent;
-
-		Debug.Log (collider);
+		Transform projectile = collider.transform.parent.parent;
 
 		if (player.tag == tag) {
 			player.position = replacementPoint.position;
@@ -20,9 +19,9 @@ public class AutoReplacement : MonoBehaviour {
 			player.rigidbody.angularVelocity = Vector3.zero;
 		
 		} 
-		else {
+		else if(collider.gameObject.GetComponent<Projectile>()){
 
-
+			Destroy(collider);
 
 		}
 

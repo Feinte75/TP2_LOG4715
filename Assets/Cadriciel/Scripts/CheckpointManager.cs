@@ -66,6 +66,11 @@ public class CheckpointManager : MonoBehaviour
 
 
 	}
+	
+	public int GetLap(CarController car){
+		PositionData carData = _carPositions[car];
+		return carData.lap;
+	}
 
 	bool IsPlayer(CarController car)
 	{
