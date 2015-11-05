@@ -16,4 +16,9 @@ public class Nitro : PowerUp {
 		Debug.Log ("Nitro ! ");
 		car.Nitro += nitroValue;
 	}
+
+	public override string GetSpriteName ()
+	{
+		return "Nitro-icon";
+	}
 }

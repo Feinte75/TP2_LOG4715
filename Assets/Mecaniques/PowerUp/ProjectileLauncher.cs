@@ -19,4 +19,9 @@ public class ProjectileLauncher : PowerUp {
 		GameObject.Instantiate(prefab, GameObject.Find("ProjectileSpawn").transform.position,  GameObject.Find("ProjectileSpawn").transform.rotation);
 	}
 
+	public override string GetSpriteName ()
+	{
+		return "Rocket-icon";
+	}
+
 }
