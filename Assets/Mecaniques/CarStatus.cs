@@ -7,6 +7,7 @@ public class CarStatus : MonoBehaviour {
 	public int currentHP = 100;
 	public int maxHP = 100;
 	public CarController carController ;
+	public Transform damageLocation; 
 	private PowerUp myPowerUp;
 	private float nitro = 50;
 
@@ -47,28 +48,23 @@ public class CarStatus : MonoBehaviour {
 
 	}
 
-	public void changeCarHealth () { // Fummee + Vitesse
+	public void changeCarHealth () { 
 		if(currentHP < 0){
 			carController.ChangeMaxSpeed(0);
-
-			GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
-			ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
-			epf.explosionForce = 1;
-			prefabexplosion.transform.position = this.transform.position;
-			GameObject explosion = Instantiate (prefabexplosion) as GameObject ;
-
-			GameObject.Destroy(explosion,3);
-
-			Destroy(this.gameObject,3);
+			Explosion();
 		}
 		else if(currentHP >= 0 && currentHP<20){
 			carController.ChangeMaxSpeed(40);
+			FireDamage();
+			Smoke();
 		}
 		else if(currentHP >= 20 && currentHP<40){
 			carController.ChangeMaxSpeed(50);
+			FireDamage();
 		}
 		else if(currentHP >= 40 && currentHP<60){
 			carController.ChangeMaxSpeed(55);
+			FireDamage();
 		}
 		else if(currentHP >= 60 && currentHP<80){
 			carController.ChangeMaxSpeed(60);
@@ -94,6 +90,33 @@ public class CarStatus : MonoBehaviour {
 		} else {
 			carController.Nitro = false;
 		}
+	}
+
+	public void FireDamage() {
+		GameObject prefabflare = Resources.Load("Flare") as GameObject;
+		prefabflare.transform.position = damageLocation.position;
+		GameObject flare = Instantiate (prefabflare) as GameObject ;
+		GameObject.Destroy(flare,5);
+	}
+
+	public void Smoke() {
+		GameObject prefabsmoke = Resources.Load("Smoke") as GameObject;
+		prefabsmoke.transform.position = damageLocation.position;
+		GameObject smoke = Instantiate (prefabsmoke) as GameObject ;
+		GameObject.Destroy(smoke,10);
+	}
+
+	public void Explosion(){
+		GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
+		ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
+		epf.explosionForce = 1;
+		prefabexplosion.transform.position = this.transform.position;
+		GameObject explosion = Instantiate (prefabexplosion) as GameObject ;
+		
+		GameObject.Destroy(explosion,3);
+		
+		Destroy(this.gameObject,3);
+
 	}
 
 	public void changeHP(int HP)

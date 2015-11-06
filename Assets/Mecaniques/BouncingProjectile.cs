@@ -11,14 +11,17 @@ public class BouncingProjectile : Projectile {
 		rigidbody.velocity = GameObject.Find("ProjectileSpawn").transform.up * 80;
 
 	}
-
+	
 
 	void OnCollisionEnter(Collision collision) {
 		Debug.Log("Collision Proj");
 		if (collision.gameObject.tag == "Wall" && bouncing<maxBouncing){
-			//rigidbody.velocity = GameObject.Find("projectileSpawn").transform.up * 80;
-			rigidbody.velocity = Vector3.Reflect(rigidbody.velocity,collision.collider.transform.position.normalized);
+			ContactPoint cp = collision.contacts[0];
+			//rigidbody.velocity = Vector3.Reflect(rigidbody.velocity,collision.collider.transform.position.normalized);
+			rigidbody.velocity = Vector3.Reflect(rigidbody.velocity,cp.normal) * 2;
 			bouncing++;
+
+
 
 		}
 		else{ 		
