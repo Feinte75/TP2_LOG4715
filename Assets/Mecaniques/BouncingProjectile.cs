@@ -14,6 +14,7 @@ public class BouncingProjectile : Projectile {
 
 
 	void OnCollisionEnter(Collision collision) {
+		Debug.Log("Collision Proj");
 		if (collision.gameObject.tag == "Wall" && bouncing<maxBouncing){
 			//rigidbody.velocity = GameObject.Find("projectileSpawn").transform.up * 80;
 			rigidbody.velocity = Vector3.Reflect(rigidbody.velocity,collision.collider.transform.position.normalized);
@@ -21,11 +22,11 @@ public class BouncingProjectile : Projectile {
 
 		}
 		else{ 		
-		if(collision.gameObject.GetComponent<CarStatus>()!=null){  
-		
-			CarStatus car = collision.gameObject.GetComponent<CarStatus>();
-			car.infligerDegat(20);
-		}
+			if(collision.gameObject.GetComponent<CarStatus>()!=null){  
+			
+				CarStatus car = collision.gameObject.GetComponent<CarStatus>();
+				car.infligerDegat(20);
+			}
 
 		GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
 		ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
