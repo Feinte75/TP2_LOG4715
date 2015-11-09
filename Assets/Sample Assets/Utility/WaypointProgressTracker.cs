@@ -89,7 +89,6 @@ public class WaypointProgressTracker : MonoBehaviour {
 			if (Vector3.Dot(progressDelta,progressPoint.direction) < 0) {
 				progressDistance += progressDelta.magnitude * 0.5f;
 			}
-
 			lastPosition = transform.position;
 		} else {
 			// point to point mode. Just increase the waypoint if we're close enough:
@@ -113,6 +112,7 @@ public class WaypointProgressTracker : MonoBehaviour {
 			lastPosition = transform.position;
 		}
 
+
 	}
 	
 	void OnDrawGizmos()
@@ -124,5 +124,10 @@ public class WaypointProgressTracker : MonoBehaviour {
 			Gizmos.color = Color.yellow;
 			Gizmos.DrawLine( target.position, target.position + target.forward );
 		}
+	}
+
+	public float GetProgressDistance(){
+
+		return progressDistance;
 	}
 }
