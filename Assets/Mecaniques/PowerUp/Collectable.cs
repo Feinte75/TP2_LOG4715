@@ -15,11 +15,15 @@ public class Collectable : MonoBehaviour {
 			int chosenItem = 0;
 
 			if (IsPlayer (car)) {
-				chosenItem = Random.Range (0, items.Length);
-				Debug.Log (chosenItem);
-				Debug.Log (items [chosenItem]);
-				car.GetComponent<CarStatus> ().MyPowerUp = items [chosenItem];
-				car.GetComponent<CarStatus> ().MyPowerUp.Init ();
+
+					if(!car.GetComponent<CarStatus> ().hasAlreadyPowerUp()){
+						chosenItem = Random.Range (0, items.Length);
+						Debug.Log (chosenItem);
+						Debug.Log (items [chosenItem]);
+						car.GetComponent<CarStatus> ().MyPowerUp = items [chosenItem];
+						car.GetComponent<CarStatus> ().MyPowerUp.Init ();
+						
+				}
 				this.collider.enabled = false;
 				Destroy (this.gameObject);
 			}

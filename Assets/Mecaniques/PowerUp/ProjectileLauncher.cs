@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
 public class ProjectileLauncher : PowerUp {
 
 	private CarStatus carStatus;
 	private GameObject prefab;
 	public string[] availablePrefab = {"ProjectilePrefab","HomingProjectilePrefab","SpecialProjectilePrefab"};
+	public int randomnumber;
 
 	public override void Init ()
 	{
 		//TODO Use availablePrefab array to choose resource
-		prefab = Resources.Load("HomingProjectilePrefab") as GameObject;
+		randomnumber = Random.Range (0, availablePrefab.Length);
+		prefab = Resources.Load(availablePrefab[randomnumber]) as GameObject;
 	}
 
 	public override void Execute (CarStatus car)
@@ -21,7 +22,8 @@ public class ProjectileLauncher : PowerUp {
 
 	public override string GetSpriteName ()
 	{
-		return "Rocket-icon";
+		string[] prefabSpriteName = {"Rocket-icon-rb","Rocket-icon-hm","Rocket-icon-sp"};
+		return prefabSpriteName[randomnumber];
 	}
 
 }
