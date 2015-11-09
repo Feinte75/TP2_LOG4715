@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class CarStatus : MonoBehaviour {
-
-	public bool hasbouncingprojectile = false;
+	
 	public int currentHP = 100;
 	public int maxHP = 100;
 	public CarController carController ;

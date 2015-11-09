@@ -9859,7 +9859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5159a17f319da43b4fb8e4197158b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasbouncingprojectile: 1
   currentHP: 100
   maxHP: 100
   carController: {fileID: 0}

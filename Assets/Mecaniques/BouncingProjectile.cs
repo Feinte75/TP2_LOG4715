@@ -5,6 +5,7 @@ public class BouncingProjectile : Projectile {
 	
 	public int maxBouncing = 1;
 	public int bouncing = 0;
+	public int damage = 20;
 
 	void Start () {
 		Rigidbody rigidbody =  this.GetComponent<Rigidbody>();
@@ -28,7 +29,7 @@ public class BouncingProjectile : Projectile {
 			if(collision.gameObject.GetComponent<CarStatus>()!=null){  
 			
 				CarStatus car = collision.gameObject.GetComponent<CarStatus>();
-				car.infligerDegat(20);
+				car.infligerDegat(damage);
 			}
 
 		GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;

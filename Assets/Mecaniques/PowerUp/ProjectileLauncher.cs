@@ -6,12 +6,12 @@ public class ProjectileLauncher : PowerUp {
 
 	private CarStatus carStatus;
 	private GameObject prefab;
-	public string[] availablePrefab = {"ProjectilePrefab"};
+	public string[] availablePrefab = {"ProjectilePrefab","HomingProjectilePrefab"};
 
 	public override void Init ()
 	{
 		//TODO Use availablePrefab array to choose resource
-		prefab = Resources.Load("ProjectilePrefab") as GameObject;
+		prefab = Resources.Load("HomingProjectilePrefab") as GameObject;
 	}
 
 	public override void Execute (CarStatus car)
