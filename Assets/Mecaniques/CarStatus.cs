@@ -10,7 +10,10 @@ public class CarStatus : MonoBehaviour {
 	private PowerUp myPowerUp;
 	private float nitro = 50;
 
-	
+	public bool hasAlreadyPowerUp(){
+		return myPowerUp != null;
+	}
+
 	public PowerUp MyPowerUp {
 		get {
 			return this.myPowerUp;
