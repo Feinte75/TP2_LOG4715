@@ -12,6 +12,7 @@ public class CarUserControlMP : MonoBehaviour
 	private string horizontal = "Horizontal";
 
 	private bool nitro = false;
+	private bool jump = false;
 
 	void Awake ()
 	{
@@ -33,6 +34,10 @@ public class CarUserControlMP : MonoBehaviour
 		nitro = Input.GetKey(KeyCode.LeftShift);		
 
 		car.GetComponent<CarStatus>().ConsumeNitro(nitro);
+
+		jump = Input.GetKey(KeyCode.LeftControl);
+
+		car.GetComponent<CarStatus>().Jump(jump);
 
 		#else
 		float h = Input.GetAxis(horizontal);

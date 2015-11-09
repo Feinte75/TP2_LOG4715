@@ -28,6 +28,53 @@ public class CarController : MonoBehaviour
     [SerializeField] private Advanced advanced;                                     // container for the advanced setting which will expose as a foldout in the inspector
 	[SerializeField] bool preserveDirectionWhileInAir = false;                      // flag for if the direction of travel to be preserved in the air (helps cars land in the right direction if doing huge jumps!)
 
+	/*
+		CETTE SECTION CONTIENT LES MÉTHODES CONTROLLANT LA POSSIBILITÉ DU SAUT SIMPLE
+	 */
+
+	/******************************
+	 * TITRE:				EnableSimpleJump()
+	 * DESCRIPTION:			Méthodes vérifiant la possibilité de sauts simples
+	 * AUTEUR:				Olivier Cantin
+	 * CHAMPS IN:			Aucun
+	 * CHAMPS OUT:			Aucun
+	 * DATE DE CRÉATION:	09 novembre 2015, 16h00
+	 * DERNIÈRE MODIF.:		09 novembre 2015, 18h00
+	 ******************************/
+	[SerializeField] private bool enableSimpleJump = true;	//déclaration de la variable sérialisée permettant le control de l'abileté directement dans l'éditeur
+	private bool permittedSimpleJump = true;	
+
+	public bool EnableSimpleJump {							//Initialisation des méthodes communes "get" et "set"
+		get {
+			return this.permittedSimpleJump;
+		}
+		set {
+			permittedSimpleJump = value;
+		}
+	}
+
+	[SerializeField] public float forceSimpleJump = 100.0f;
+
+	public float ForceSimpleJump {							//Initialisation des méthodes communes "get" et "set"
+		get {
+			return this.forceSimpleJump;
+		}
+		set {
+			forceSimpleJump = value;
+		}
+	}
+
+	public void SimpleJump()
+	{
+		if (enableSimpleJump && anyOnGround && permittedSimpleJump) {
+			rigidbody.AddForce(0, forceSimpleJump, 0);
+		}
+	}
+
+	/********************************************
+	 * FIN DES MÉTHODES DE CONTROLE DE LA POSSIBILITÉ DES SAUTS SIMPLES
+	 ********************************************/
+
 	private bool nitro = false;
 
 	public bool Nitro {
