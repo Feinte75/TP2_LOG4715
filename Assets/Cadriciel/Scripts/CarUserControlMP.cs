@@ -33,7 +33,7 @@ public class CarUserControlMP : MonoBehaviour
 		q = nitro = Input.GetKey(KeyCode.Q);
 		e = nitro = Input.GetKey(KeyCode.E);
 
-		if (Input.GetKeyDown("space")) {
+		if (Input.GetKeyDown("f")) {
 			car.GetComponent<CarStatus>().LaunchPowerUp();
 		}
 
@@ -41,7 +41,7 @@ public class CarUserControlMP : MonoBehaviour
 
 		car.GetComponent<CarStatus>().ConsumeNitro(nitro);
 
-		jump = Input.GetKey(KeyCode.LeftControl);
+		jump = Input.GetKey(KeyCode.Space);
 
 		car.GetComponent<CarStatus>().Jump(jump);
 
