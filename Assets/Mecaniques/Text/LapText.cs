@@ -21,7 +21,6 @@ public class LapText : MonoBehaviour {
 				CheckpointManager cmanager = manager.GetComponent<CheckpointManager>();
 				lap = cmanager.GetLap(playercar) + 1;	
 				lapText.text ="Lap : " + lap.ToString () + "/3";
-				
 			}
 		}
 	}

@@ -32,8 +32,8 @@ public class SpeedoMeter : MonoBehaviour {
 		else {
 			rotationAngle = Mathf.Lerp(0,180,-spFactor);
 		}
+
 		GUIUtility.RotateAroundPivot(rotationAngle,new Vector2(Screen.width-100,Screen.height-100));
 		GUI.DrawTexture(new Rect(Screen.width - 150,Screen.height-150,100,100),spPointer);
-
 	}
 }

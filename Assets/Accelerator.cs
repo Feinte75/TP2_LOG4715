@@ -20,6 +20,9 @@ public class Accelerator : MonoBehaviour {
 
 	bool IsPlayer(CarController car)
 	{
+		if (car == null)
+			return false;
+
 		return car.GetComponent<CarUserControlMP>() != null;
 	}
 }

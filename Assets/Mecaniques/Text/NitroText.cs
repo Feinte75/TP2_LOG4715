@@ -16,7 +16,6 @@ public class NitroText : MonoBehaviour {
 			if (carStatus)
 			{
 				nitroText.text ="Nitro : " + ((int)carStatus.Nitro).ToString ();
-				
 			}
 		}
 	}

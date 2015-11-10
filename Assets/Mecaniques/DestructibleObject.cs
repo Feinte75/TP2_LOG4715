@@ -15,11 +15,11 @@ public class DestructibleObject : MonoBehaviour {
 
 			CarStatus car = collision.gameObject.GetComponent<CarStatus>() ;
 
-			GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
-			ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
+			GameObject prefabExplosion = Resources.Load("Explosion") as GameObject;
+			ExplosionPhysicsForce epf = prefabExplosion.GetComponent<ExplosionPhysicsForce>();
 			epf.explosionForce = explosionForce;
 			car.transform.position = this.transform.position;
-			GameObject explosion = Instantiate (prefabexplosion) as GameObject ;
+			GameObject explosion = Instantiate (prefabExplosion) as GameObject ;
 			GameObject.Destroy(explosion,3);
 
 			if(destructible){
@@ -27,11 +27,6 @@ public class DestructibleObject : MonoBehaviour {
 			}
 
 			car.infligerDegat(damage);
-		
 		}
-		
 	}
-	
-	
-	
 }

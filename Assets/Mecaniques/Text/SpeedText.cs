@@ -16,9 +16,7 @@ public class SpeedText : MonoBehaviour {
 			if (playercar)
 			{
 				speedText.text ="Speed : " + ((int)playercar.CurrentSpeed).ToString () + " km/h";
-			
 			}
 		}
 	}
-
 }
