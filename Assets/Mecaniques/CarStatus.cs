@@ -117,18 +117,18 @@ public class CarStatus : MonoBehaviour {
 	}
 
 	public void Smoke() {
-		GameObject prefabsmoke = Resources.Load("Smoke") as GameObject;
-		prefabsmoke.transform.position = damageLocation.position;
-		GameObject smoke = Instantiate (prefabsmoke) as GameObject ;
+		GameObject prefabSmoke = Resources.Load("Smoke") as GameObject;
+		prefabSmoke.transform.position = damageLocation.position;
+		GameObject smoke = Instantiate (prefabSmoke) as GameObject ;
 		GameObject.Destroy(smoke,10);
 	}
 
 	public void Explosion(){
-		GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
-		ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
+		GameObject prefabExplosion = Resources.Load("Explosion") as GameObject;
+		ExplosionPhysicsForce epf = prefabExplosion.GetComponent<ExplosionPhysicsForce>();
 		epf.explosionForce = 1;
-		prefabexplosion.transform.position = this.transform.position;
-		GameObject explosion = Instantiate (prefabexplosion) as GameObject ;
+		prefabExplosion.transform.position = this.transform.position;
+		GameObject explosion = Instantiate (prefabExplosion) as GameObject ;
 		
 		GameObject.Destroy(explosion,3);
 		

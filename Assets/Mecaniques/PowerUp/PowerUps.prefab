@@ -103,6 +103,7 @@ GameObject:
   - 65: {fileID: 6553622}
   - 23: {fileID: 2353622}
   - 114: {fileID: 11453622}
+  - 114: {fileID: 11438068}
   m_Layer: 0
   m_Name: Present
   m_TagString: Untagged
@@ -209,6 +210,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453626}
+  - 114: {fileID: 11405328}
   m_Layer: 0
   m_Name: Line1
   m_TagString: Untagged
@@ -775,7 +777,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9e7866b2d74679c4ea5407c2092e054a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1346,6 +1348,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11405328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1347817507220a4384f3ff6f7c24546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveUnitsPerSecond:
+    value: {x: 0, y: 0, z: 0}
+    space: 1
+  rotateDegreesPerSecond:
+    value: {x: 0, y: 0, z: 0}
+    space: 1
+  ignoreTimescale: 0
 --- !u!114 &11415234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1402,6 +1422,24 @@ MonoBehaviour:
   items:
   - {fileID: 11482636, guid: 0221e2a824bcb2f4186fff97e5350b12, type: 2}
   - {fileID: 11428236, guid: db6afb7c5feebff4488c172c55b323d8, type: 2}
+--- !u!114 &11438068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1347817507220a4384f3ff6f7c24546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveUnitsPerSecond:
+    value: {x: 0, y: 0, z: 0}
+    space: 1
+  rotateDegreesPerSecond:
+    value: {x: 0, y: 0, z: 0}
+    space: 1
+  ignoreTimescale: 0
 --- !u!114 &11453622
 MonoBehaviour:
   m_ObjectHideFlags: 1

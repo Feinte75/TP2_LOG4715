@@ -12,39 +12,30 @@ public class BouncingProjectile : Projectile {
 		rigidbody.velocity = GameObject.Find("ProjectileSpawn").transform.up * 80;
 
 	}
-	
 
 	void OnCollisionEnter(Collision collision) {
-		Debug.Log("Collision Proj");
+		
 		if (collision.gameObject.tag == "Wall" && bouncing<maxBouncing){
 			ContactPoint cp = collision.contacts[0];
 			//rigidbody.velocity = Vector3.Reflect(rigidbody.velocity,collision.collider.transform.position.normalized);
 			rigidbody.velocity = Vector3.Reflect(rigidbody.velocity,cp.normal) * 2;
 			bouncing++;
-
-
-
 		}
-		else{ 		
+		else { 		
 			if(collision.gameObject.GetComponent<CarStatus>()!=null){  
 			
 				CarStatus car = collision.gameObject.GetComponent<CarStatus>();
 				car.infligerDegat(damage);
 			}
 
-		GameObject prefabexplosion = Resources.Load("Explosion") as GameObject;
-		ExplosionPhysicsForce epf = prefabexplosion.GetComponent<ExplosionPhysicsForce>();
-		epf.explosionForce = 1;
-		prefabexplosion.transform.position = this.transform.position;
-		GameObject explosion = Instantiate (prefabexplosion) as GameObject ;
+			GameObject prefabExplosion = Resources.Load("Explosion") as GameObject;
+			ExplosionPhysicsForce epf = prefabExplosion.GetComponent<ExplosionPhysicsForce>();
+			epf.explosionForce = 1;
+			prefabExplosion.transform.position = this.transform.position;
+			GameObject explosion = Instantiate (prefabExplosion) as GameObject ;
 
-		GameObject.Destroy(this.gameObject);
-
-		GameObject.Destroy(explosion,3);
-		
+			GameObject.Destroy(this.gameObject);
+			GameObject.Destroy(explosion,3);
 		}
-	
-
-	
 	}
 }

@@ -7,13 +7,7 @@ public class BlocDestructible : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		// Si l objet rentre en contact avec un projectile   //Mettre une classe abstraite Super Projectile
 		if(collision.gameObject.GetComponent<Projectile>()){  
-			
 			Destroy(this.gameObject); //Destruction de l obstacle ( Je pense a un bloc ou rocher )
-			
 		}
-
 	}
-	
-	
-	
 }

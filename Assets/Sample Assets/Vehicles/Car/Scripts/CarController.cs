@@ -217,22 +217,26 @@ public class CarController : MonoBehaviour
 	public void Move (float steerInput, float accelBrakeInput, bool q, bool e)
     {
 		/**METHODE CONTROLLANT L'ORIENTATION AERIENNE**/
-		if (anyOnGround)
-			rotAng = 0.0f;
-		else 
-		{
-			if (q && !e) {
-				rotAng = rotAng - 1.0f;
-			} else if (e && !q) {
-				rotAng = rotAng + 1.0f;
-			} else {
+		/** DIRTY LAST MINUTE HACK **/
+		if (this.gameObject.name == "Joueur 1") {
+			if (anyOnGround)
 				rotAng = 0.0f;
+			else 
+			{
+				if (q && !e) {
+					rotAng = rotAng - 1.0f;
+				} else if (e && !q) {
+					rotAng = rotAng + 1.0f;
+				} else {
+					rotAng = 0.0f;
+				}
+			}
+			
+			if (!anyOnGround && orientationAerienne) {
+				ControleAerien(steerInput, accelBrakeInput,rotAng);
 			}
 		}
 
-		if (!anyOnGround && orientationAerienne) {
-			ControleAerien(steerInput, accelBrakeInput,rotAng);
-		}
 
 		// lose control of engine if immobilized
 		if (immobilized) accelBrakeInput = 0;

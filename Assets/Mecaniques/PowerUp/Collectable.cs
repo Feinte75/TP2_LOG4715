@@ -18,8 +18,6 @@ public class Collectable : MonoBehaviour {
 
 					if(!car.GetComponent<CarStatus> ().hasAlreadyPowerUp()){
 						chosenItem = Random.Range (0, items.Length);
-						Debug.Log (chosenItem);
-						Debug.Log (items [chosenItem]);
 						car.GetComponent<CarStatus> ().MyPowerUp = items [chosenItem];
 						car.GetComponent<CarStatus> ().MyPowerUp.Init ();
 						
@@ -34,6 +32,9 @@ public class Collectable : MonoBehaviour {
 
 	bool IsPlayer(CarController car)
 	{
+		if (car == null)
+			return false;
+
 		return car.GetComponent<CarUserControlMP>() != null;
 	}
 }
