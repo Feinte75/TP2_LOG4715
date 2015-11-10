@@ -8,6 +8,7 @@ public class BendDetector : MonoBehaviour {
 	public Image image;
 	bool detected = false;
 	Transform[] waypoints;
+	public float threshold = 40;
 
 
 	void Start () {
@@ -18,19 +19,19 @@ public class BendDetector : MonoBehaviour {
 	void Update() {
 		
 		BendIndication bend = null;
-		float mindistance = 100;
-		float threeshold = 40;
+		float minDistance = 100;
+
 		foreach  (Transform wp in waypoints) {
 			if(wp.GetComponent<BendIndication>()!=null){
 				BendIndication bi = wp.GetComponent<BendIndication>();
 				float distance =  Vector3.Distance(wp.transform.position, transform.position);
 				float direction = wp.position.z- transform.position.z ;
-				if(distance < mindistance  && direction > 0){
+				if(distance < minDistance  && direction > 0){
 					
-					mindistance = distance;
+					minDistance = distance;
 					bend = bi ;
 					
-					if(distance <= threeshold){
+					if(distance <= threshold){
 						detected = true ;
 						break;
 						
@@ -46,9 +47,7 @@ public class BendDetector : MonoBehaviour {
 			
 		}
 
-		Debug.Log ("BENDER " + bend);
 		if (bend != null && detected) {
-			Debug.Log ("BENDER DIR " + bend.turnDirection);
 			if (bend.turnDirection == "Left") {
 				image.sprite = Resources.Load ("turn-left", typeof(Sprite)) as Sprite;
 				image.CrossFadeAlpha(1, 0.5f, false);
