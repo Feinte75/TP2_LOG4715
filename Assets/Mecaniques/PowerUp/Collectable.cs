@@ -27,6 +27,8 @@ public class Collectable : MonoBehaviour {
 				this.collider.enabled = false;
 				Destroy (this.gameObject);
 			}
+			else
+				secureTrigger = true;
 		}
 	}
 
