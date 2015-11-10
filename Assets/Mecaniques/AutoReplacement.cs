@@ -9,23 +9,30 @@ public class AutoReplacement : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider collider) { // Rajouter aussi pour projectile
-		Transform player = collider.transform.parent.parent;
-		Transform projectile = collider.transform.parent.parent;
 
-		if (player.tag == tag) {
+
+
+		if (IsPlayer (collider.GetComponentInParent<CarController> ())) {
+			Transform player = collider.transform.parent.parent;
 			player.position = replacementPoint.position;
 			player.rotation = replacementPoint.rotation;
 			player.rigidbody.velocity = Vector3.zero;
 			player.rigidbody.angularVelocity = Vector3.zero;
 		
-		} 
-		else if(collider.gameObject.GetComponent<Projectile>()){
+		} else if (collider.gameObject.GetComponent<Projectile> ()) {
+			if (IsPlayer (collider.GetComponentInParent<CarController> ())) {
+				Destroy (collider);
 
-			Destroy(collider);
+			}
+
 
 		}
 
+	}
 
+	bool IsPlayer(CarController car)
+	{
+		return car.GetComponent<CarUserControlMP>() != null;
 	}
 
 }
