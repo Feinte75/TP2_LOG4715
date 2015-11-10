@@ -90,7 +90,7 @@ public class CarStatus : MonoBehaviour {
 	public void ConsumeNitro(bool nitroPressed) {
 
 		if (nitroPressed && nitro > 0) {
-			nitro -= 0.1f;
+			nitro -= 0.2f;
 			carController.Nitro = true;
 		} else {
 			carController.Nitro = false;
