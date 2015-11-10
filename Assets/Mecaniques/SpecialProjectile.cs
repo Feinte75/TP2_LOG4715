@@ -15,7 +15,6 @@ public class SpecialProjectile : Projectile {
 		CheckpointManager cm =GameObject.Find ("Game Manager").GetComponent<CheckpointManager>() ;
 		firstPlayerTarget = cm.getFirstCarOnRace ();
 		waypointTarget = getClosestWayPoint ();
-		Debug.Log (waypointTarget.gameObject);
 		
 	}
 	
