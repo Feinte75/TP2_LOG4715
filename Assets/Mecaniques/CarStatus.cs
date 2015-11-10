@@ -9,6 +9,7 @@ public class CarStatus : MonoBehaviour {
 	public Transform damageLocation; 
 	private PowerUp myPowerUp;
 	private float nitro = 50;
+	public float nitroMax = 100;
 
 	public bool hasAlreadyPowerUp(){
 		return myPowerUp != null;
@@ -29,6 +30,8 @@ public class CarStatus : MonoBehaviour {
 		}
 		set {
 			nitro = value;
+			if(nitro > nitroMax)
+				nitro = nitroMax;
 		}
 	}
 
@@ -87,7 +90,7 @@ public class CarStatus : MonoBehaviour {
 	public void ConsumeNitro(bool nitroPressed) {
 
 		if (nitroPressed && nitro > 0) {
-			nitro -= 0.1f;
+			nitro -= 0.2f;
 			carController.Nitro = true;
 		} else {
 			carController.Nitro = false;

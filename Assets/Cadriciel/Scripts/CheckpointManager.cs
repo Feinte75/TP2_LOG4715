@@ -130,7 +130,7 @@ public class CheckpointManager : MonoBehaviour
 	}
 
 	public CarController getLastCarOnRace(){
-		float progressCounter = 10000;
+		float progressCounter = 1000;
 		CarController lastCar= null;
 		foreach (CarController car in _carContainer.GetComponentsInChildren<CarController>(false))
 		{

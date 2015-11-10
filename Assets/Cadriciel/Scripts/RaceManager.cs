@@ -18,11 +18,26 @@ public class RaceManager : MonoBehaviour
 	[SerializeField]
 	private int _endCountdown;
 
+	private bool rubberBanding = false;
+
 	// Use this for initialization
 	void Awake () 
 	{
 		CarActivation(false);
 
+	}
+
+	void Update() 
+	{
+		GameObject player = GameObject.Find("Joueur 1");
+		if (GetComponent<CheckpointManager> ().getLastCarOnRace () == player.GetComponent<CarController> () && rubberBanding == false) {
+			rubberBanding = true;
+			player.GetComponent<CarStatus> ().Nitro += 20;
+			player.GetComponent<CarController> ().MaxSpeed += 20;
+		} else if (GetComponent<CheckpointManager> ().getLastCarOnRace () != player.GetComponent<CarController> () && rubberBanding == true) {
+			rubberBanding = false;
+			player.GetComponent<CarController> ().MaxSpeed -= 20;
+		}
 	}
 	
 	void Start()
@@ -92,4 +107,5 @@ public class RaceManager : MonoBehaviour
 		}
 
 	}
+
 }
