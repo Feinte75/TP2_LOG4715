@@ -23,6 +23,6 @@ public class CarUserControl : MonoBehaviour
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 #endif
-        car.Move(h,v);
+        car.Move(h,v,false, false);
     }
 }

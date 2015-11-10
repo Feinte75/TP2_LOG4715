@@ -9750,8 +9750,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
-  forceSimpleJump: 100
+  forceSimpleJump: 300
+  g: 0
 --- !u!114 &481286552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10520,7 +10522,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400030, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: forceSimpleJump
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 11400030, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: preserveDirectionWhileInAir
@@ -20640,8 +20642,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
   forceSimpleJump: 50
+  g: 0
 --- !u!54 &981142460
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29900,8 +29904,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
   forceSimpleJump: 50
+  g: 0
 --- !u!114 &1368033982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34281,8 +34287,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
   forceSimpleJump: 50
+  g: 0
 --- !u!114 &1635867385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38611,8 +38619,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
   forceSimpleJump: 50
+  g: 0
 --- !u!54 &1881066739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41497,8 +41507,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
   forceSimpleJump: 50
+  g: 0
 --- !u!54 &1977983691
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43043,8 +43055,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
   forceSimpleJump: 50
+  g: 0
 --- !u!114 &2042105153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44136,8 +44150,10 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  orientationAerienne: 1
   enableSimpleJump: 1
   forceSimpleJump: 50
+  g: 0
 --- !u!114 &2099699819
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class CarUserControlMP : MonoBehaviour
 
 	private bool nitro = false;
 	private bool jump = false;
+	private bool q = false;
+	private bool e = false;
 
 	void Awake ()
 	{
@@ -27,6 +29,10 @@ public class CarUserControlMP : MonoBehaviour
 		#if CROSS_PLATFORM_INPUT
 		float h = CrossPlatformInput.GetAxis(horizontal);
 		float v = CrossPlatformInput.GetAxis(vertical);
+
+		q = nitro = Input.GetKey(KeyCode.Q);
+		e = nitro = Input.GetKey(KeyCode.E);
+
 		if (Input.GetKeyDown("space")) {
 			car.GetComponent<CarStatus>().LaunchPowerUp();
 		}
@@ -43,6 +49,6 @@ public class CarUserControlMP : MonoBehaviour
 		float h = Input.GetAxis(horizontal);
 		float v = Input.GetAxis(vertical);
 		#endif
-		car.Move(h,v);
+		car.Move(h,v,q,e);
 	}
 }

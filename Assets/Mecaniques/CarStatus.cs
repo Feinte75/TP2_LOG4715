@@ -94,15 +94,6 @@ public class CarStatus : MonoBehaviour {
 		}
 	}
 
-	/******************************************************************
-	 * TITRE:				Jump()
-	 * DESCRIPTION:			Méthodes implementant les sauts simples
-	 * AUTEUR:				Olivier Cantin
-	 * CHAMPS IN:			Aucun
-	 * CHAMPS OUT:			Aucun
-	 * DATE DE CRÉATION:	09 novembre 2015, 16h39
-	 * DERNIÈRE MODIF.:		09 novembre 2015
-	 ******************************************************************/
 	public void Jump(bool jumpPressed)
 	{
 		if (jumpPressed) {
@@ -114,8 +105,6 @@ public class CarStatus : MonoBehaviour {
 		carController.SimpleJump ();
 
 	}
-
-	/******************************************************************/
 
 	public void FireDamage() {
 		GameObject prefabflare = Resources.Load("Flare") as GameObject;
